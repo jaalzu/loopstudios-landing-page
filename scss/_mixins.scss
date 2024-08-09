@@ -1,0 +1,18 @@
+@import 'variables';
+
+
+@mixin font-style($color, $size, $weight) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
+  
+
+
+  @mixin flexbox($direction, $align-items, $justify-content) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+  }
+  

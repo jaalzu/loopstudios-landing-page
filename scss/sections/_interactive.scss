@@ -1,0 +1,73 @@
+
+
+.interactive {
+    position: relative;
+    display: inline-block; // Para que el tamaño del contenedor dependa de la imagen
+    margin: 0 auto;
+  padding-top: 12rem;
+  padding-bottom: 13rem;
+
+  
+    .interactive__img{
+        width: 100%;
+        margin: 0 auto;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .white-box {
+      position: absolute;
+      bottom: -1px; // 
+      right: -200px;  // 
+      max-width: 60%;    // 
+      height: 62%;   // 
+      background-color: white;
+
+      h2{
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        margin-left: 4rem;
+        text-align: start;
+        width: 80%;
+        font-size: 3rem;
+
+
+      }
+
+      p{
+        text-align: start;
+        font-size: 1rem;
+        margin-left: 4rem;
+    }
+    }
+  
+    @media (max-width: 1108px) {
+      
+      
+
+      .white-box {
+        position: static;
+        margin: 0 auto;
+        max-width: 100%;
+        padding-bottom: 2rem;
+
+        h2{
+            margin-left: 0rem;
+            text-align: center;
+            width: 100%;
+            font-size: 2.5rem;
+        }
+
+        p{
+            text-align: center;
+            margin-left: 0rem;
+            font-size: 1.1rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+      }
+    }
+  }
+  

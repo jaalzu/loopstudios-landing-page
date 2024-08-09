@@ -1,0 +1,138 @@
+@import '../mixins';
+
+.navbar{
+    @include flexbox(row,center,space-between);
+    padding-top: 3rem;
+    width: 100%;
+    position: sticky;
+    min-height: 5vh;
+    background-color: transparent;
+    z-index: 10000;
+
+
+    .logo{
+        z-index: 10000;
+         }
+
+
+    .nav__list{
+        left: 0;
+        position: fixed;
+        background-color: black;
+        height: 100vh;
+        top: 0%;
+        width: 100vw;
+        left: 100%;
+        padding: 15rem 1.7rem;
+        list-style: none;
+        transition: left .7s;
+
+
+        li a{
+            @include font-style($white,2rem,$font-weight-300);
+            font-family: $font-family-josefin-sans;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-block: 1rem;
+            opacity: 0; // Inicialmente invisible
+            transform: translateX(200px); // Inicialmente desplazado hacia la derecha
+            transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+          }
+
+
+          li:nth-of-type(1) a {
+            transition-delay: .1s;
+          }
+          li:nth-of-type(2) a {
+            transition-delay: .2s;
+          }
+          li:nth-of-type(3) a {
+            transition-delay: .3s;
+          }
+          li:nth-of-type(4) a {
+            transition-delay: .4s;
+          }
+          li:nth-of-type(5) a {
+            transition-delay: .5s;
+          }
+    }
+
+    
+    .show-menu li a {
+      opacity: 1; // Hacer visible
+      transform: translateX(0px); // Mover a la posición final
+    }
+
+    .menu-icons{
+        cursor: pointer;
+
+        
+        .nav-toggle{
+            width: 1.8rem;
+        }
+        
+        .nav-close{
+            z-index: 10000000;
+            position: fixed;
+            width: 1.7rem;
+            top: 6.2%;
+            display: none;
+            transform: rotate(0deg);
+            transition: transform .4s ease;
+        }
+
+        
+        .show-menu .nav-close {
+          display: block; // Mostrar el botón
+          transform: rotate(180deg); // Rotar 180 grados
+        }
+      }
+    
+
+    .show-menu{
+      left: 0%;
+    }
+}
+
+
+
+@media screen and (min-width:860px){
+    .navbar {
+        padding-top: 5rem;
+        width: 100%;    
+
+
+        .nav__list {
+          position: static;
+          display: flex;
+          flex-direction: row;
+          height: auto;
+          width: auto;
+          padding: 0;
+          background-color: transparent;
+          
+          ul{
+            list-style: none;
+            display: flex;
+          }
+
+          li {
+            margin: 0 1.1rem;
+            
+            a {
+              @include font-style($white, 1.1rem, $font-weight-400); 
+              font-family: $font-family-josefin-sans;
+              text-transform: none;
+              opacity: 1;
+              transform: translateX(0px); // Inicialmente desplazado hacia la derecha
+            transition: none;
+
+            }
+          }
+        }
+    
+        .menu-icons {
+          display: none; 
+        }
+      }
+}

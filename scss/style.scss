@@ -1,0 +1,103 @@
+@use 'sections/header.scss' as *;
+@use 'sections/navbar' as *;
+@use 'sections/interactive' as *;
+@use 'sections/creations' as *;
+@use 'sections/footer' as *;
+
+
+// base styles
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html.sr .load-hidden {
+    visibility: hidden;
+}
+
+@media screen and (max-width:909px)
+{
+    *{
+        overflow-x: hidden;
+    }
+}
+
+
+body{
+    background-color: $white;
+    width: 100%;
+}
+
+
+h1,h2,h3{
+    font-family: $font-family-josefin-sans;
+    text-transform: uppercase;
+}
+
+h2{
+    @include font-style($black,2.3rem,$font-weight-300);
+    text-align: center;
+}
+
+p{
+    font-family: $font-family-alata;
+    text-align: center;
+    line-height: 1.7;
+    @include font-style($dark-gray,1.050rem,$font-weight-300)
+}
+
+
+span{
+    font-family: $font-family-josefin-sans;
+}
+
+
+img{
+    width: auto;
+    display: block;
+    height: auto;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+
+a {
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -8px; // Ajusta la posición vertical de la línea
+        left: 50%;
+        width: 0;
+        height: 2px; // Ajusta el grosor de la línea
+        background-color: $white; // Ajusta el color de la línea
+        transition: width 0.3s ease, left 0.3s ease;
+    }
+    &:hover::after{
+        width: 100%;
+    left: 0;
+    }  
+}
+
+
+.container {
+    width: calc(100% - 20px); // Si tienes un padding de 10px a cada lado
+  }
+
+
+.padding-style{
+    padding-inline: 1.7rem;
+}
+
+@media screen and (min-width:800px){
+    .padding-style{
+        padding-inline: 5rem;
+    }
+}

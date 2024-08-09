@@ -1,0 +1,167 @@
+@use '../mixins' as *;
+
+.creations{
+    position: relative;
+    width: 100%;
+    display: grid;
+    flex-direction: column;
+    padding-bottom: 7rem;
+
+    h2{
+     margin-bottom: 3rem;
+    }
+
+    .creations__grid{
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+        gap: 1.5rem;
+        order: 2;
+        display: grid;
+
+        .item__grid {
+            position: relative;
+            @include font-style($white,1.6rem,$font-weight-300);
+
+            &:hover{
+                color: $black;
+            }
+
+            .img__grid {
+              position: relative;
+              cursor: pointer;
+          
+              // Asegúrate de que la imagen ocupe todo el contenedor
+              img {
+                display: block;
+                width: 100%;
+                filter: brightness(0.8);
+                height: auto;
+              }
+
+              
+          
+              // Efecto de oscuridad en la imagen
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(232, 232, 232, 0.7); // Cambié el color a negro con 60% de opacidad
+                transition: transform .4s ease-out;
+                transform: scaleY(0);
+                z-index: 100;
+              }
+
+              
+
+              &:hover::before
+               {
+                transform: scaleY(1);
+                }
+        }
+            span{
+                position: absolute;
+                bottom: 17%;
+                left: 8%;
+                text-transform: uppercase;
+                transition: color 0.3s ease-out; // Añade una transición suave para el color
+                z-index: 1000; 
+            }
+          }
+          
+
+
+           
+            
+        }
+    }
+        
+        button{
+            margin: 0 auto;
+            display: inline-flex;
+            font-family: $font-family-alata;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            padding: .7rem 2.7rem;
+            @include font-style($black,1.1rem,$font-weight-500);
+            cursor: pointer;
+            border: 1px solid black;
+            background-color: transparent;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+            outline: none;
+            transition: .3s;
+            
+
+            &:hover{
+                background-color: $black;
+                color: $white;
+            }
+
+        }
+
+        
+        .btn-desktop{
+            display: none;
+        }
+
+@media screen and (min-width:801px){
+    .creations{
+
+        .header__creations{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+
+            h2{
+                margin-bottom: 0rem;
+            }
+
+            button{
+                margin: 0 0;
+                padding: .7rem 2.7rem;
+                margin-bottom: 0rem;
+        
+            }
+        }
+
+        .creations__grid{
+
+        grid-template-columns: repeat(4,1fr);
+        .item__grid{
+            
+            .img__grid{
+                // efecto de oscuridad en la img
+                &::after{
+                    position: absolute;
+                    content: "";
+                    top: 0%;
+                    right: 0;
+                    bottom: 0%;
+                    left: 0;
+                    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+                }
+            }
+            
+            span{
+                left: 15%;
+                bottom: 8%;
+                font-size: clamp(1rem,2.1vw,2.1rem);
+            }
+        }
+        }
+    }
+
+
+    .btn-mobile{
+        display: none;
+    }
+
+    .btn-desktop{
+        display: block;
+    }
+    
+}
