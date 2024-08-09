@@ -31,30 +31,23 @@ if(navClose){
 
 
 
-if (window.innerWidth > 860) {
-   // Aplica ScrollReveal solo en pantallas mayores a 768px
-   ScrollReveal().reveal('.interactive', {
-     delay: 700,
-     distance: '50px',
-     origin: 'left',
-     duration:1000,
-   });
- }
-if (window.innerWidth > 860) {
-   // Aplica ScrollReveal solo en pantallas mayores a 768px
-   ScrollReveal().reveal('.creations', {
-     delay: 300,
-     distance: '200px',
-     origin: 'left',
-     duration:1000,
-   });
- }
+// if (window.innerWidth > 860) {
+//    // Aplica ScrollReveal solo en pantallas mayores a 768px
+//    ScrollReveal().reveal('.interactive', {
+//      delay: 700,
+//      distance: '50px',
+//      origin: 'left',
+//      duration:1000,
+//    });
+//  }
+// if (window.innerWidth > 860) {
+//    // Aplica ScrollReveal solo en pantallas mayores a 768px
+//    ScrollReveal().reveal('.creations', {
+//      delay: 300,
+//      distance: '200px',
+//      origin: 'left',
+//      duration:1000,
+//    });
+//  }
 
 
-
-
-// ScrollReveal().reveal('.navbar', {distance:'-100px'});
-// ScrollReveal().reveal('.navbar', {origin:'right'});
-// ScrollReveal().reveal('.navbar', {delay:'200'});
-
-// ScrollReveal().reveal('.navbar', { mobile: false });
