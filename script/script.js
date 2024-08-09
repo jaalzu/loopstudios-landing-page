@@ -30,14 +30,7 @@ if(navClose){
 
 
 
-if (window.innerWidth > 860) {
-   // Aplica ScrollReveal solo en pantallas mayores a 768px
-   ScrollReveal().reveal('.hero', {
-     delay: 400,
-     distance: '120px',
-     origin: 'left',
-   });
- }
+
 if (window.innerWidth > 860) {
    // Aplica ScrollReveal solo en pantallas mayores a 768px
    ScrollReveal().reveal('.interactive', {
