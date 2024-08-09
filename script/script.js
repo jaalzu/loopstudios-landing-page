@@ -29,20 +29,13 @@ if(navClose){
 }
 
 
-if (window.innerWidth > 860) {
-   // Aplica ScrollReveal solo en pantallas mayores a 768px
-   ScrollReveal().reveal('.navbar', {
-     delay: 400,
-     distance: '120px',
-     origin: 'top',
-   });
- }
+
 if (window.innerWidth > 860) {
    // Aplica ScrollReveal solo en pantallas mayores a 768px
    ScrollReveal().reveal('.hero', {
      delay: 400,
      distance: '120px',
-     origin: 'bottom',
+     origin: 'left',
    });
  }
 if (window.innerWidth > 860) {
